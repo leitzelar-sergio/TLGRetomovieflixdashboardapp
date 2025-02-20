@@ -3,11 +3,6 @@ import pandas as pd
 import plotly.express as px  
 import firebase_admin
 from firebase_admin import credentials, firestore
-import json
-
-# 🔥 Inicializar Firebase (evita inicialización duplicada)
-if not firebase_admin._apps:
-    firebase_admin.initialize_app(cred)
 
 # ✅ Conectar a Firestore
 db = firestore.client()
