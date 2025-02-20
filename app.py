@@ -4,6 +4,9 @@ import plotly.express as px
 import firebase_admin
 from firebase_admin import credentials, firestore
 
+# ✅ Conectar a Firestore
+db = firestore.client()
+
 # 🎨 Configuración de la aplicación
 st.set_page_config(
     page_title="Movieflix Dashboard",
