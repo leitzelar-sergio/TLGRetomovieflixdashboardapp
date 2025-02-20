@@ -4,13 +4,6 @@ import plotly.express as px
 import firebase_admin
 from firebase_admin import credentials, firestore
 
-# 🔥 Conectar a Firebase (solo si no está inicializado)
-if not firebase_admin._apps:
-    cred = credentials.Certificate("firebase_credentials.json")  # Reemplaza con el JSON de Firebase
-    firebase_admin.initialize_app(cred)
-
-db = firestore.client()
-
 # 🎨 Configuración de la aplicación
 st.set_page_config(
     page_title="Movieflix Dashboard",
