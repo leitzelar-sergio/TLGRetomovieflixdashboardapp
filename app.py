@@ -90,12 +90,12 @@ with col1:
         st.plotly_chart(fig, use_container_width=True)
 
 with col2:
-if st.checkbox("🎭 Mostrar gráfico por género", key="chk_genre") and not data.empty:
-    st.subheader("🎭 Cantidad de películas por género")
-    genre_counts = data['genre'].value_counts().reset_index()
-    genre_counts.columns = ['Género', 'Cantidad']
-    fig = px.bar(genre_counts, x='Género', y='Cantidad', color='Género', title='Películas por Género')
-    st.plotly_chart(fig, use_container_width=True)
+    if st.checkbox("🎭 Mostrar gráfico por género", key="chk_genre") and not data.empty:
+        st.subheader("🎭 Cantidad de películas por género")
+        genre_counts = data['genre'].value_counts().reset_index()
+        genre_counts.columns = ['Género', 'Cantidad']
+        fig = px.bar(genre_counts, x='Género', y='Cantidad', color='Género', title='Películas por Género')
+        st.plotly_chart(fig, use_container_width=True)
 
 # 📌 Formulario para agregar películas
 with st.sidebar:
