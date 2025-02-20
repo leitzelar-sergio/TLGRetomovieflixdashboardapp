@@ -89,14 +89,6 @@ with col1:
         fig = px.bar(director_counts, x='Director', y='Cantidad', color='Cantidad', title='Películas por Director')
         st.plotly_chart(fig, use_container_width=True)
 
-with col2:
-    if st.checkbox("🏢 Mostrar gráfico por compañía", key="chk_company") and not data.empty:
-        st.subheader("🏢 Distribución de películas por compañía")
-        company_counts = data['company'].value_counts().reset_index()
-        company_counts.columns = ['Compañía', 'Cantidad']
-        fig = px.pie(company_counts, values='Cantidad', names='Compañía', title='Películas por Compañía')
-        st.plotly_chart(fig, use_container_width=True)
-
 if st.checkbox("🎭 Mostrar gráfico por género", key="chk_genre") and not data.empty:
     st.subheader("🎭 Cantidad de películas por género")
     genre_counts = data['genre'].value_counts().reset_index()
