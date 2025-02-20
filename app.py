@@ -114,11 +114,7 @@ with st.sidebar:
         director = st.text_input("Director*", key="director_input")
         compania = st.text_input("Compañía productora", key="company_input")
         genero = st.text_input("Género*", key="genre_input")
-        anio = st.number_input("Año*", min_value=1900, max_value=2024, step=1, key="year_input")
-        rating = st.slider("Calificación (1-10)*", 1, 10, key="rating_input")
-        duracion = st.number_input("Duración (minutos)*", min_value=1, step=1, key="duration_input")
-        descripcion = st.text_area("Sinopsis", key="description_input")
-
+     
         submitted = st.form_submit_button("🎬 Añadir Película")
 
         if submitted:
