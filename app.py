@@ -3,8 +3,6 @@ import pandas as pd
 import plotly.express as px  
 import firebase_admin
 
-db = firestore.client()
-
 # 🎨 Configuración de la aplicación
 st.set_page_config(
     page_title="Movieflix Dashboard",
