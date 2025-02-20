@@ -124,10 +124,7 @@ with st.sidebar:
                     "director": director,
                     "company": compania,
                     "genre": genero,
-                    "year": int(anio),
-                    "rating": float(rating),
-                    "duration": int(duracion),
-                    "description": descripcion
+                    
                 }
 
                 try:
