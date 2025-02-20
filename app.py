@@ -89,6 +89,7 @@ with col1:
         fig = px.bar(director_counts, x='Director', y='Cantidad', color='Cantidad', title='Películas por Director')
         st.plotly_chart(fig, use_container_width=True)
 
+with col2:
 if st.checkbox("🎭 Mostrar gráfico por género", key="chk_genre") and not data.empty:
     st.subheader("🎭 Cantidad de películas por género")
     genre_counts = data['genre'].value_counts().reset_index()
@@ -115,8 +116,7 @@ with st.sidebar:
                     "director": director,
                     "company": compania,
                     "genre": genero,
-                    
-                }
+                    }
 
                 try:
                     db.collection("movies").add(nuevo_filme)
