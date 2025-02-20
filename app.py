@@ -37,9 +37,9 @@ with st.sidebar:
 
     # Filtro por título
     with st.expander("🔍 Buscar por título"):
-        title = st.text_input("Ingrese el título")
-        if title:  # Evita búsquedas vacías
-            st.session_state['filtered_data'] = data[data['name'].str.contains(title, case=False, na=False)]
+        title = st.selectbox("Seleccione un título", options=["Todos"] + list(data['title'].dropna().unique()))
+        if title != "Todos":
+            st.session_state['filtered_data'] = data[data['title'] == title]
             st.session_state['filter_type'] = "Título"
             st.session_state['filter_value'] = title
 
