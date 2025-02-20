@@ -37,11 +37,11 @@ with st.sidebar:
 
     # Filtro por título
     with st.expander("🔍 Buscar por título"):
-        title = st.selectbox("Seleccione un título", options=["Todos"] + list(data['title'].dropna().unique()))
-        if title != "Todos":
-            st.session_state['filtered_data'] = data[data['title'] == title]
+        name = st.selectbox("Seleccione un título", options=["Todos"] + list(data['name'].dropna().unique()))
+        if name != "Todos":
+            st.session_state['filtered_data'] = data[data['name'] == name]
             st.session_state['filter_type'] = "Título"
-            st.session_state['filter_value'] = title
+            st.session_state['filter_value'] = name
 
     # Filtro por director
     with st.expander("🎥 Filtrar por director"):
