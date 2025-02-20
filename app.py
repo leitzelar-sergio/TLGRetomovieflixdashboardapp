@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px  
 import firebase_admin
-from firebase_admin import credentials, firestore
 
 db = firestore.client()
 
