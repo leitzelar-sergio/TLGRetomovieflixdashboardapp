@@ -5,7 +5,7 @@ import firebase_admin
 
 # 🎨 Configuración de la aplicación
 st.set_page_config(
-    page_title="Movieflix Dashboard",
+    page_title="Movieflix Dashboard App",
     page_icon="🎬",
     layout="wide",
 )
