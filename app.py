@@ -2,21 +2,6 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px  
 import firebase_admin
-from firebase_admin import credentials, firestore
-import json
-
-# 🔥 Configurar Firebase Firestore (solo si no está inicializado)
-if "firebase_credentials" in st.secrets:
-    firebase_secrets = json.loads(st.secrets["firebase_credentials"])
-    cred = credentials.Certificate(firebase_secrets)
-else:
-    st.error("⚠️ No se encontraron credenciales de Firebase en Streamlit Secrets.")
-    st.stop()
-
-if not firebase_admin._apps:
-    firebase_admin.initialize_app(cred)
-
-db = firestore.client()
 
 # 🎨 Configuración de la aplicación
 st.set_page_config(
