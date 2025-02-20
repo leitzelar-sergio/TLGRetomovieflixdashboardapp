@@ -4,7 +4,11 @@ import plotly.express as px
 import firebase_admin
 from firebase_admin import credentials, firestore
 
-# ✅ Conectar a Firestore
+# 🔥 Conectar a Firebase (solo si no está inicializado)
+if not firebase_admin._apps:
+    cred = credentials.Certificate("movies.json")  # Reemplaza con el JSON de Firebase
+    firebase_admin.initialize_app(cred)
+
 db = firestore.client()
 
 # 🎨 Configuración de la aplicación
@@ -14,7 +18,7 @@ st.set_page_config(
     layout="wide",
 )
 
-st.title('🎬 Movieflix Dashboard')
+st.title('🎬 Movieflix Dashboard App')
 
 # 📌 Cargar datos desde CSV con manejo de errores
 DATA_URL = 'movies.csv'
